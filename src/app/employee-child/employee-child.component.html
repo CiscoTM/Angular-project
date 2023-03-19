@@ -1,0 +1,42 @@
+<div class="container bg-light">
+    <table class="table table-sm ">
+      <thead class="bg-secondary text-light">
+        <th>#</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Cargo</th>
+        <th>Salario</th>
+        <th></th>
+      </thead>
+      <tbody>
+        <tr>
+          <!-- <a [routerLink]="['/actualizar',indice]">         -->
+          <td>{{indice+1}}</td>
+          <td>{{empleadoDeLista.nombre}}</td>
+          <td>{{empleadoDeLista.apellido}}</td>
+          <td>{{empleadoDeLista.cargo}}</td>
+          <td>{{empleadoDeLista.salario}}</td>
+        <!-- </a> -->
+        <a style="color: black;text-decoration: none;" [routerLink]="['/actualizar',indice]" [queryParams]="{accion:'1'}">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><path fill="currentColor" d="m19.3 8.925l-4.25-4.2l1.4-1.4q.575-.575 1.413-.575t1.412.575l1.4 1.4q.575.575.6 1.388t-.55 1.387L19.3 8.925ZM17.85 10.4L7.25 21H3v-4.25l10.6-10.6l4.25 4.25Z"/></svg>
+        </a>
+        <a style="color: black;text-decoration: none;" [routerLink]="['/actualizar',indice]" [queryParams]="{accion:'2'}">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><path fill="currentColor" d="M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12M8 9h8v10H8V9m7.5-5l-1-1h-5l-1 1H5v2h14V4h-3.5Z"/></svg>
+        </a>  
+      </tr>
+        
+        <tr class="mt-5">
+          <td class="p-2" colspan="5">
+            <app-details (employeeCharacters)="addCharacter($event)"></app-details>
+              <tr>
+                <td>
+                  <ul style="list-style: none;">
+                    <li *ngFor="let character of charactersArray">{{character}}</li>
+                  </ul>  
+                </td>
+              </tr>
+          </td>
+        </tr>      
+      </tbody>
+    </table>
+  </div>

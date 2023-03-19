@@ -1,0 +1,11 @@
+<div>
+    <form class="form-group row m-5" #formulario="ngForm" (ngSubmit)="login(formulario)">
+        <div class="form-group col-md-3">
+            <input class="form-control m-2" type="email" name="email" id="" placeholder="email" ngModel>
+            <input class="form-control m-2" type="password" name="password" id="" placeholder="password" ngModel>
+        </div>
+        <div>
+            <button class="btn btn-sm btn-success m-2" type="submit">Login</button>
+        </div>
+    </form>
+</div>
